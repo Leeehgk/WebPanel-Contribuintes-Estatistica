@@ -1,0 +1,698 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    BODY {
+        FONT-FAMILY: Arial, sans-serif;
+        PADDING-BOTTOM: 20px;
+        PADDING-TOP: 20px;
+        PADDING-LEFT: 20px;
+        MARGIN: 0px;
+        PADDING-RIGHT: 20px;
+        BACKGROUND-COLOR: #f4f4f4
+    }
+
+    .Container {
+        MAX-WIDTH: 900px;
+        BACKGROUND: #fff;
+        PADDING-BOTTOM: 20px;
+        PADDING-TOP: 20px;
+        PADDING-LEFT: 20px;
+        MARGIN: auto;
+        PADDING-RIGHT: 20px;
+        border-radius: 10px
+    }
+
+    .total-container {
+        DISPLAY: flex;
+        justify-content: center;
+        gap: 20px
+    }
+
+    H1 {
+        FONT-SIZE: 22px;
+        MARGIN-BOTTOM: 20px;
+        COLOR: #333;
+        TEXT-ALIGN: center
+    }
+
+    .Section {
+        OVERFLOW: hidden;
+        MARGIN-BOTTOM: 15px;
+        BACKGROUND: #fff;
+        border-radius: 8px
+    }
+
+    .Section H2 {
+        FONT-SIZE: 18px;
+        BACKGROUND: #00b3ff;
+        COLOR: #fff;
+        PADDING-BOTTOM: 12px;
+        PADDING-TOP: 12px;
+        PADDING-LEFT: 12px;
+        MARGIN: 0px;
+        DISPLAY: flex;
+        PADDING-RIGHT: 12px;
+        border-radius: 8px;
+        justify-content: space-between;
+        align-items: center
+    }
+
+    .total-box {
+        FONT-SIZE: 18px;
+        BACKGROUND: #d7d1d1;
+        PADDING-BOTTOM: 12px;
+        TEXT-ALIGN: center;
+        PADDING-TOP: 12px;
+        PADDING-LEFT: 20px;
+        MARGIN: 5px;
+        DISPLAY: inline-block;
+        PADDING-RIGHT: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+    }
+
+    .gray-box {
+        BORDER-TOP: #333 2px solid;
+        BORDER-RIGHT: #333 2px solid;
+        BORDER-BOTTOM: #333 2px solid;
+        BORDER-LEFT: #333 2px solid;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5)
+    }
+
+    .bold {
+        FONT-WEIGHT: bold
+    }
+
+
+    .chart-container {
+        HEIGHT: 150px;
+        WIDTH: 300px
+    }
+
+    @media Print {
+        .print-button {
+            DISPLAY: none !important
+        }
+    }
+
+    .print-button {
+        FONT-SIZE: 12px;
+        HEIGHT: 20px;
+        WIDTH: 80px;
+        MARGIN-LEFT: 20px;
+        BACKGROUND-COLOR: #cddff1;
+        border-radius: 20px
+    }
+</style>
+<div class="Container" style="HEIGHT: 100%; WIDTH: 100%" classref="d52f9833-90c9-4096-8e42-27485741f78a-827">
+    <h1>Estatistica<button onclick="window.print()" class="print-button">Imprimir</button>
+    </h1>
+    <div class="Section">
+        <h2>A Receber (Por M&ecirc;s de Vencimento)
+        </h2>
+    </div>
+    <div class="total-container">
+        <div class="chart-container">
+            <CANVAS id="barChart">
+            </CANVAS>
+        </div>
+    </div>
+    <div class="Section">
+        <div class="total-container">
+            <div id="Section1" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div class="content">
+                    <div class="text">
+                        <div id="Section2" class="bold">JAN
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeJan gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:9;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section98" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section97" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section6" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section3" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">FEV
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeFev gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:11;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section101" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section100" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section99" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section4" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">MAR
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeMar gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:12;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section103" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section102" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section1007" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1005" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">ABR
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeAbr gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:13;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+        </div>
+        <div class="total-container">
+            <div id="Section105" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section1104" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section1019" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1018" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">MAI
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeMai gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:14;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section107" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section1016" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section1110" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1010" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">JUN
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeJun gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:15;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section109" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section1081" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section1310" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1220" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">JUL
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeJul gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:16;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section111" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section11020" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section1510" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1412" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">AGO
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeAgo gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:17;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+        </div>
+        <div class="total-container">
+            <div id="Section113" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section1123" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section1714" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1614" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">SET
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeSet gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:18;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section115" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section11454" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section1914" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section18155" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">OUT
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeOut gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:19;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section117" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section11614" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section21114" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section20414" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">NOV
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeNov gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:20;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section119" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section118151" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section231143" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section22241" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">DEZ
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeDez gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:21;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+        </div>
+        <h2>Recebidos (Por M&ecirc;s de Vencimento)
+        </h2>
+        <div class="Section">
+            <div class="total-container">
+                <div id="Section120" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                    classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                    <div class="content">
+                        <div class="text">
+                            <div id="Section1002" class="bold">JAN
+                            </div>
+                        </div>
+                    </div>
+                    <input class="Attribute" contenteditable="false"
+                        style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                        size="14" value=&amp;RecJan gxControl="Attribute"
+                        gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:23;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+                </div>
+                <div id="Section121" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                    classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                    <div id="Section1097" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section1006" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                            <div id="Section1003" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">FEV
+                            </div>
+                        </div>
+                    </div>
+                    <input class="Attribute" contenteditable="false"
+                        style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                        size="14" value=&amp;RecFev gxControl="Attribute"
+                        gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:24;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+                </div>
+                <div id="Section122" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                    classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                    <div id="Section10098" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section1099" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                            <div id="Section1004" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">MAR
+                            </div>
+                        </div>
+                    </div>
+                    <input class="Attribute" contenteditable="false"
+                        style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                        size="14" value=&amp;RecMar gxControl="Attribute"
+                        gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:25;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+                </div>
+                <div id="Section123" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                    classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                    <div id="Section1102" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section7" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                            <div id="Section5" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">ABR
+                            </div>
+                        </div>
+                    </div>
+                    <input class="Attribute" contenteditable="false"
+                        style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                        size="14" value=&amp;RecAbr gxControl="Attribute"
+                        gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:26;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+                </div>
+            </div>
+            <div class="total-container">
+                <div id="Section124" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                    classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                    <div id="Section104" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section9" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                            <div id="Section8" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">MAI
+                            </div>
+                        </div>
+                    </div>
+                    <input class="Attribute" contenteditable="false"
+                        style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                        size="14" value=&amp;RecMai gxControl="Attribute"
+                        gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:27;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+                </div>
+                <div id="Section125" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                    classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                    <div id="Section106" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section11" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                            <div id="Section10" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">JUN
+                            </div>
+                        </div>
+                    </div>
+                    <input class="Attribute" contenteditable="false"
+                        style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                        size="14" value=&amp;RecJun gxControl="Attribute"
+                        gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:28;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+                </div>
+                <div id="Section126" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                    classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                    <div id="Section108" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section13" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                            <div id="Section12" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">JUL
+                            </div>
+                        </div>
+                    </div>
+                    <input class="Attribute" contenteditable="false"
+                        style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                        size="14" value=&amp;RecJul gxControl="Attribute"
+                        gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:29;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+                </div>
+                <div id="Section127" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                    classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                    <div id="Section110" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section15" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                            <div id="Section14" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">AGO
+                            </div>
+                        </div>
+                    </div>
+                    <input class="Attribute" contenteditable="false"
+                        style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                        size="14" value=&amp;RecAgo gxControl="Attribute"
+                        gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:30;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+                </div>
+            </div>
+            <div class="total-container">
+                <div id="Section128" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                    classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                    <div id="Section112" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section17" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                            <div id="Section16" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">SET
+                            </div>
+                        </div>
+                    </div>
+                    <input class="Attribute" contenteditable="false"
+                        style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                        size="14" value=&amp;RecSet gxControl="Attribute"
+                        gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:31;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+                </div>
+                <div id="Section129" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                    classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                    <div id="Section114" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section19" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                            <div id="Section18" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">OUT
+                            </div>
+                        </div>
+                    </div>
+                    <input class="Attribute" contenteditable="false"
+                        style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                        size="14" value=&amp;RecOut gxControl="Attribute"
+                        gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:32;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+                </div>
+                <div id="Section130" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                    classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                    <div id="Section116" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section21" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                            <div id="Section20" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">NOV
+                            </div>
+                        </div>
+                    </div>
+                    <input class="Attribute" contenteditable="false"
+                        style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                        size="14" value=&amp;RecNov gxControl="Attribute"
+                        gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:33;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+                </div>
+                <div id="Section131" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                    classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                    <div id="Section118" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section23" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                            <div id="Section22" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">DEZ
+                            </div>
+                        </div>
+                    </div>
+                    <input class="Attribute" contenteditable="false"
+                        style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                        size="14" value=&amp;RecDez gxControl="Attribute"
+                        gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:34;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+                </div>
+            </div>
+        </div>
+        <h2>Recebidos (Por M&ecirc;s de Recebimento)
+        </h2>
+        <div class="total-container">
+            <div id="Section132" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section25" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section24" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1008" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">JAN
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;PagJan gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:36;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section133" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section27" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section26" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <strong>FEV</strong>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;PagFev gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:37;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section134" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section29" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section28" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1009" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">
+                            MAR&nbsp;
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;PagMar gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:38;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section135" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section31" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section30" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1011" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">
+                            ABR&nbsp;
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;PagAbr gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:39;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+        </div>
+        <div class="total-container">
+            <div id="Section136" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section33" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section32" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1012" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">
+                            MAI&nbsp;
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;PagMai gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:40;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section137" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section35" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section34" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1013" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">JUN
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;PagJun gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:41;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section138" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section37" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section36" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1014" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">JUL
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;PagJul gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:42;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section139" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section39" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section38" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1015" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">
+                            AGO&nbsp;
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;PagAgo gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:43;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+        </div>
+        <div class="total-container">
+            <div id="Section140" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section41" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section40" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1017" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">
+                            SET&nbsp;
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;PagSet gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:44;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section141" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section43" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section42" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1020" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">
+                            OUT&nbsp;
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;PagOut gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:45;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section142" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section45" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section44" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1021" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">
+                            NOV&nbsp;
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;PagNov gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:46;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+            <div id="Section143" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1644 d52f9833-90c9-4096-8e42-27485741f78a-1645">
+                <div id="Section47" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section46" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1654">
+                        <div id="Section1022" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">
+                            DEZ&nbsp;
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;PagDez gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:47;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Section">
+</div>
+<div class="Section">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+
+        window.onload = function () {
+            let fem = document.getElementById('span_vFEM')?.innerText.trim() || "0";
+            let masc = document.getElementById('span_vMASC')?.innerText.trim() || "0";
+            let saude = document.getElementById('span_vABEJAN')?.innerText.trim() || "0";
+            let nutricao = document.getElementById('span_vTOTALSET2')?.innerText.trim() || "0";
+            let adm = document.getElementById('span_vTOTALSET3')?.innerText.trim() || "0";
+            let apoio = document.getElementById('span_vTOTALSET4')?.innerText.trim() || "0";
+            let zeladoria = document.getElementById('span_vTOTALSET5')?.innerText.trim() || "0";
+            let promocao = document.getElementById('span_vTOTALSET6')?.innerText.trim() || "0";
+
+            fem = parseInt(fem) || 0;
+            masc = parseInt(masc) || 0;
+            saude = parseInt(saude) || 0;
+            nutricao = parseInt(nutricao) || 0;
+            adm = parseInt(adm) || 0;
+            apoio = parseInt(apoio) || 0;
+            zeladoria = parseInt(zeladoria) || 0;
+            promocao = parseInt(promocao) || 0;
+
+            let setores = [
+                { label: 'Saúde', value: saude, color: '#007bff', borderColor: '#004085' },
+                { label: 'Nutrição', value: nutricao, color: '#ff7f7f', borderColor: '#d9534f' },
+                { label: 'Administração', value: adm, color: '#28a745', borderColor: '#155724' },
+                { label: 'Apoio', value: apoio, color: '#ffc107', borderColor: '#856404' },
+                { label: 'Zeladoria', value: zeladoria, color: '#17a2b8', borderColor: '#0c5460' },
+                { label: 'Promoção', value: promocao, color: '#6610f2', borderColor: '#4e0754' }
+            ];
+
+            let labelsFixos = setores.map(s => s.label);
+            let valoresFixos = setores.map(s => s.value);
+            let coresFixas = setores.map(s => s.color);
+            let bordasFixas = setores.map(s => s.borderColor);
+
+            let canvas = document.getElementById('barChart');
+            if (!canvas) {
+                console.error("Erro: Canvas 'barChart' não encontrado!");
+                return;
+            }
+
+            let ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labelsFixos,
+                    datasets: [{
+                        label: 'Total de Funcionários',
+                        data: valoresFixos,
+                        backgroundColor: coresFixas,
+                        borderColor: bordasFixas,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                label: function (tooltipItem) {
+                                    return tooltipItem.label + ': ' + tooltipItem.raw;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        };
+
+
+    </script>
