@@ -633,14 +633,14 @@
         let zeladoria = document.getElementById('span_vTOTALSET5')?.innerText.trim() || "0";
         let promocao = document.getElementById('span_vTOTALSET6')?.innerText.trim() || "0";
 
-        fem = parseInt(fem) || 0;
-        masc = parseInt(masc) || 0;
-        saude = parseInt(saude) || 0;
-        nutricao = parseInt(nutricao) || 0;
-        adm = parseInt(adm) || 0;
-        apoio = parseInt(apoio) || 0;
-        zeladoria = parseInt(zeladoria) || 0;
-        promocao = parseInt(promocao) || 0;
+        fem = parseFloat(fem) || 0;
+        masc = parseFloat(masc) || 0;
+        saude = parseFloat(saude) || 0;
+        nutricao = parseFloat(nutricao) || 0;
+        adm = parseFloat(adm) || 0;
+        apoio = parseFloat(apoio) || 0;
+        zeladoria = parseFloat(zeladoria) || 0;
+        promocao = parseFloat(promocao) || 0;
 
         let setores = [
             { label: 'Saúde', value: saude, color: '#007bff', borderColor: '#004085' },
