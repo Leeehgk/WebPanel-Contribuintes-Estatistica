@@ -619,80 +619,77 @@
         </div>
     </div>
 </div>
-<div class="Section">
-</div>
-<div class="Section">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
 
 
-        window.onload = function () {
-            let fem = document.getElementById('span_vFEM')?.innerText.trim() || "0";
-            let masc = document.getElementById('span_vMASC')?.innerText.trim() || "0";
-            let saude = document.getElementById('span_vABEJAN')?.innerText.trim() || "0";
-            let nutricao = document.getElementById('span_vTOTALSET2')?.innerText.trim() || "0";
-            let adm = document.getElementById('span_vTOTALSET3')?.innerText.trim() || "0";
-            let apoio = document.getElementById('span_vTOTALSET4')?.innerText.trim() || "0";
-            let zeladoria = document.getElementById('span_vTOTALSET5')?.innerText.trim() || "0";
-            let promocao = document.getElementById('span_vTOTALSET6')?.innerText.trim() || "0";
+    window.onload = function () {
+        let fem = document.getElementById('span_vFEM')?.innerText.trim() || "0";
+        let masc = document.getElementById('span_vMASC')?.innerText.trim() || "0";
+        let saude = document.getElementById('span_vABEJAN')?.innerText.trim() || "0";
+        let nutricao = document.getElementById('span_vTOTALSET2')?.innerText.trim() || "0";
+        let adm = document.getElementById('span_vTOTALSET3')?.innerText.trim() || "0";
+        let apoio = document.getElementById('span_vTOTALSET4')?.innerText.trim() || "0";
+        let zeladoria = document.getElementById('span_vTOTALSET5')?.innerText.trim() || "0";
+        let promocao = document.getElementById('span_vTOTALSET6')?.innerText.trim() || "0";
 
-            fem = parseInt(fem) || 0;
-            masc = parseInt(masc) || 0;
-            saude = parseInt(saude) || 0;
-            nutricao = parseInt(nutricao) || 0;
-            adm = parseInt(adm) || 0;
-            apoio = parseInt(apoio) || 0;
-            zeladoria = parseInt(zeladoria) || 0;
-            promocao = parseInt(promocao) || 0;
+        fem = parseInt(fem) || 0;
+        masc = parseInt(masc) || 0;
+        saude = parseInt(saude) || 0;
+        nutricao = parseInt(nutricao) || 0;
+        adm = parseInt(adm) || 0;
+        apoio = parseInt(apoio) || 0;
+        zeladoria = parseInt(zeladoria) || 0;
+        promocao = parseInt(promocao) || 0;
 
-            let setores = [
-                { label: 'Saúde', value: saude, color: '#007bff', borderColor: '#004085' },
-                { label: 'Nutrição', value: nutricao, color: '#ff7f7f', borderColor: '#d9534f' },
-                { label: 'Administração', value: adm, color: '#28a745', borderColor: '#155724' },
-                { label: 'Apoio', value: apoio, color: '#ffc107', borderColor: '#856404' },
-                { label: 'Zeladoria', value: zeladoria, color: '#17a2b8', borderColor: '#0c5460' },
-                { label: 'Promoção', value: promocao, color: '#6610f2', borderColor: '#4e0754' }
-            ];
+        let setores = [
+            { label: 'Saúde', value: saude, color: '#007bff', borderColor: '#004085' },
+            { label: 'Nutrição', value: nutricao, color: '#ff7f7f', borderColor: '#d9534f' },
+            { label: 'Administração', value: adm, color: '#28a745', borderColor: '#155724' },
+            { label: 'Apoio', value: apoio, color: '#ffc107', borderColor: '#856404' },
+            { label: 'Zeladoria', value: zeladoria, color: '#17a2b8', borderColor: '#0c5460' },
+            { label: 'Promoção', value: promocao, color: '#6610f2', borderColor: '#4e0754' }
+        ];
 
-            let labelsFixos = setores.map(s => s.label);
-            let valoresFixos = setores.map(s => s.value);
-            let coresFixas = setores.map(s => s.color);
-            let bordasFixas = setores.map(s => s.borderColor);
+        let labelsFixos = setores.map(s => s.label);
+        let valoresFixos = setores.map(s => s.value);
+        let coresFixas = setores.map(s => s.color);
+        let bordasFixas = setores.map(s => s.borderColor);
 
-            let canvas = document.getElementById('barChart');
-            if (!canvas) {
-                console.error("Erro: Canvas 'barChart' não encontrado!");
-                return;
-            }
+        let canvas = document.getElementById('barChart');
+        if (!canvas) {
+            console.error("Erro: Canvas 'barChart' não encontrado!");
+            return;
+        }
 
-            let ctx = canvas.getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labelsFixos,
-                    datasets: [{
-                        label: 'Total de Funcionários',
-                        data: valoresFixos,
-                        backgroundColor: coresFixas,
-                        borderColor: bordasFixas,
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { position: 'top' },
-                        tooltip: {
-                            callbacks: {
-                                label: function (tooltipItem) {
-                                    return tooltipItem.label + ': ' + tooltipItem.raw;
-                                }
+        let ctx = canvas.getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labelsFixos,
+                datasets: [{
+                    label: 'Total de Funcionários',
+                    data: valoresFixos,
+                    backgroundColor: coresFixas,
+                    borderColor: bordasFixas,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: {
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw;
                             }
                         }
                     }
                 }
-            });
-        };
+            }
+        });
+    };
 
 
-    </script>
+</script>
