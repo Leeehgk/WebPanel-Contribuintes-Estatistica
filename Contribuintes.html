@@ -279,6 +279,21 @@
                     gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:21;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
             </div>
         </div>
+        <div class="total-container">
+            <div id="Section11111" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1639 d52f9833-90c9-4096-8e42-27485741f78a-1640">
+                <div id="Section11112" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1634">
+                    <div id="Section11113" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section11114" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">TOTAL
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;AbeTot gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:22;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+            </div>
+        </div>
         <h2>Recebidos (Por M&ecirc;s de Vencimento)
         </h2>
         <div class="Section">
@@ -443,6 +458,21 @@
                         size="14" value=&amp;RecDez gxControl="Attribute"
                         gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:34;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
                 </div>
+            </div>
+        </div>
+        <div class="total-container">
+            <div id="Section11115" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+                classref="d52f9833-90c9-4096-8e42-27485741f78a-1639 d52f9833-90c9-4096-8e42-27485741f78a-1640">
+                <div id="Section11116" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1634">
+                    <div id="Section11117" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                        <div id="Section11118" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">TOTAL
+                        </div>
+                    </div>
+                </div>
+                <input class="Attribute" contenteditable="false"
+                    style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                    size="14" value=&amp;RecTot gxControl="Attribute"
+                    gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:35;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
             </div>
         </div>
         <h2>Recebidos (Por M&ecirc;s de Recebimento)
@@ -617,9 +647,25 @@
             </div>
         </div>
     </div>
+    <div class="total-container">
+        <div id="Section11119" class="total-box gray-box" style="HEIGHT: 90px; WIDTH: 120px"
+            classref="d52f9833-90c9-4096-8e42-27485741f78a-1639 d52f9833-90c9-4096-8e42-27485741f78a-1640">
+            <div id="Section111110" class="content" classref="d52f9833-90c9-4096-8e42-27485741f78a-1634">
+                <div id="Section111111" class="text" classref="d52f9833-90c9-4096-8e42-27485741f78a-1641">
+                    <div id="Section111112" class="bold" classref="d52f9833-90c9-4096-8e42-27485741f78a-1430">TOTAL
+                    </div>
+                </div>
+            </div>
+            <input class="Attribute" contenteditable="false"
+                style="FONT-SIZE: 12pt; TEXT-DECORATION: none; FONT-FAMILY: 'Trebuchet MS'; FONT-WEIGHT: bold; COLOR: #0000ff; FONT-STYLE: normal"
+                size="14" value=&amp;PagTot gxControl="Attribute"
+                gxProp="Font=Trebuchet MS, 12pt, style\x03DBold;AttID=var:48;GxObjClass=13;ReadOnly=True;AutoResize=True;GxFormat=HTML;ForeColor=Blue" />
+        </div>
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+
 
 
     window.onload = function () {
@@ -661,7 +707,7 @@
             { label: 'Ago', value: AbeAgo, color: '#6f42c1', borderColor: '#4e0754' },
             { label: 'Set', value: AbeSet, color: '#e83e8c', borderColor: '#721c24' },
             { label: 'Out', value: AbeOut, color: '#e83e8c', borderColor: '#721c24' },
-            { label: 'Nov', value: AbeNov, color: '#e83e8c', borderColor: '#721c24' },
+            { label: 'Nov', value: AbeNov, acolor: '#e83e8c', borderColor: '#721c24' },
             { label: 'Dez', value: AbeDez, color: '#e83e8c', borderColor: '#721c24' },
         ];
 
@@ -704,6 +750,7 @@
             }
         });
     };
+
 
 
 </script>
