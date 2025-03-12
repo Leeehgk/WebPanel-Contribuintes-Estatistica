@@ -650,7 +650,7 @@
         AbeNov = parseFloat(AbeNov) || 0;
         AbeDez = parseFloat(AbeDez) || 0;
 
-        let setores = [
+        let Receber = [
             { label: 'Jan', value: AbeJan, color: '#007bff', borderColor: '#004085' },
             { label: 'Fev', value: AbeFev, color: '#ff7f7f', borderColor: '#d9534f' },
             { label: 'Mar', value: AbeMar, color: '#28a745', borderColor: '#155724' },
@@ -665,10 +665,10 @@
             { label: 'Dez', value: AbeDez, color: '#e83e8c', borderColor: '#721c24' },
         ];
 
-        let labelsFixos = setores.map(s => s.label);
-        let valoresFixos = setores.map(s => s.value);
-        let coresFixas = setores.map(s => s.color);
-        let bordasFixas = setores.map(s => s.borderColor);
+        let labelsFixos = Receber.map(s => s.label);
+        let valoresFixos = Receber.map(s => s.value);
+        let coresFixas = Receber.map(s => s.color);
+        let bordasFixas = Receber.map(s => s.borderColor);
 
         let canvas = document.getElementById('barChart');
         if (!canvas) {
