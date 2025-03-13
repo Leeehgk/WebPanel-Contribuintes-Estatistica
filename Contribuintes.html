@@ -112,7 +112,11 @@
     </div>
     <div class="total-container">
         <div class="chart-container">
-            <CANVAS id="barChart">
+            <CANVAS id="barChartAbe">
+            </CANVAS>
+        </div>
+        <div class="chart-container">
+            <CANVAS id="barChartRec">
             </CANVAS>
         </div>
     </div>
@@ -665,9 +669,6 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-
-
-
     window.onload = function () {
         let AbeJan = document.getElementById('span_vABEJAN')?.innerText.trim() || "0";
         let AbeFev = document.getElementById('span_vABEFEV')?.innerText.trim() || "0";
@@ -682,75 +683,84 @@
         let AbeNov = document.getElementById('span_vABENOV')?.innerText.trim() || "0";
         let AbeDez = document.getElementById('span_vABEDEZ')?.innerText.trim() || "0";
 
-
-        AbeJan = parseFloat(AbeJan) || 0;
-        AbeFev = parseFloat(AbeFev) || 0;
-        AbeMar = parseFloat(AbeMar) || 0;
-        AbeAbr = parseFloat(AbeAbr) || 0;
-        AbeMai = parseFloat(AbeMai) || 0;
-        AbeJun = parseFloat(AbeJun) || 0;
-        AbeJul = parseFloat(AbeJul) || 0;
-        AbeAgo = parseFloat(AbeAgo) || 0;
-        AbeSet = parseFloat(AbeSet) || 0;
-        AbeOut = parseFloat(AbeOut) || 0;
-        AbeNov = parseFloat(AbeNov) || 0;
-        AbeDez = parseFloat(AbeDez) || 0;
+        let RecJan = document.getElementById('span_vRECJAN')?.innerText.trim() || "0";
+        let RecFev = document.getElementById('span_vRECFEV')?.innerText.trim() || "0";
+        let RecMar = document.getElementById('span_vRECMAR')?.innerText.trim() || "0";
+        let RecAbr = document.getElementById('span_vRECABR')?.innerText.trim() || "0";
+        let RecMai = document.getElementById('span_vRECMAI')?.innerText.trim() || "0";
+        let RecJun = document.getElementById('span_vRECJUN')?.innerText.trim() || "0";
+        let RecJul = document.getElementById('span_vRECJUL')?.innerText.trim() || "0";
+        let RecAgo = document.getElementById('span_vRECAGO')?.innerText.trim() || "0";
+        let RecSet = document.getElementById('span_vRECSET')?.innerText.trim() || "0";
+        let RecOut = document.getElementById('span_vRECOUT')?.innerText.trim() || "0";
+        let RecNov = document.getElementById('span_vRECNOV')?.innerText.trim() || "0";
+        let RecDez = document.getElementById('span_vRECDEZ')?.innerText.trim() || "0";
 
         let Receber = [
-            { label: 'Jan', value: AbeJan, color: '#007bff', borderColor: '#004085' },
-            { label: 'Fev', value: AbeFev, color: '#ff7f7f', borderColor: '#d9534f' },
-            { label: 'Mar', value: AbeMar, color: '#28a745', borderColor: '#155724' },
-            { label: 'Abr', value: AbeAbr, color: '#ffc107', borderColor: '#856404' },
-            { label: 'Mai', value: AbeMai, color: '#17a2b8', borderColor: '#0c5460' },
-            { label: 'Jun', value: AbeJun, color: '#6610f2', borderColor: '#4e0754' },
-            { label: 'Jul', value: AbeJul, color: '#dc3545', borderColor: '#721c24' },
-            { label: 'Ago', value: AbeAgo, color: '#6f42c1', borderColor: '#4e0754' },
-            { label: 'Set', value: AbeSet, color: '#e83e8c', borderColor: '#721c24' },
-            { label: 'Out', value: AbeOut, color: '#e83e8c', borderColor: '#721c24' },
-            { label: 'Nov', value: AbeNov, acolor: '#e83e8c', borderColor: '#721c24' },
-            { label: 'Dez', value: AbeDez, color: '#e83e8c', borderColor: '#721c24' },
+            { label: 'Jan', value: parseFloat(AbeJan) || 0, color: '#007bff', borderColor: '#004085' },
+            { label: 'Fev', value: parseFloat(AbeFev) || 0, color: '#ff7f7f', borderColor: '#d9534f' },
+            { label: 'Mar', value: parseFloat(AbeMar) || 0, color: '#28a745', borderColor: '#155724' },
+            { label: 'Abr', value: parseFloat(AbeAbr) || 0, color: '#ffc107', borderColor: '#856404' },
+            { label: 'Mai', value: parseFloat(AbeMai) || 0, color: '#17a2b8', borderColor: '#0c5460' },
+            { label: 'Jun', value: parseFloat(AbeJun) || 0, color: '#6610f2', borderColor: '#4e0754' },
+            { label: 'Jul', value: parseFloat(AbeJul) || 0, color: '#dc3545', borderColor: '#721c24' },
+            { label: 'Ago', value: parseFloat(AbeAgo) || 0, color: '#6f42c1', borderColor: '#4e0754' },
+            { label: 'Set', value: parseFloat(AbeSet) || 0, color: '#e83e8c', borderColor: '#721c24' },
+            { label: 'Out', value: parseFloat(AbeOut) || 0, color: '#e83e8c', borderColor: '#721c24' },
+            { label: 'Nov', value: parseFloat(AbeNov) || 0, color: '#e83e8c', borderColor: '#721c24' },
+            { label: 'Dez', value: parseFloat(AbeDez) || 0, color: '#e83e8c', borderColor: '#721c24' }
         ];
 
-        let labelsFixos = Receber.map(s => s.label);
-        let valoresFixos = Receber.map(s => s.value);
-        let coresFixas = Receber.map(s => s.color);
-        let bordasFixas = Receber.map(s => s.borderColor);
+        let Recebidos = [
+            { label: 'Jan', value: parseFloat(RecJan) || 0, color: '#007bff', borderColor: '#004085' },
+            { label: 'Fev', value: parseFloat(RecFev) || 0, color: '#ff7f7f', borderColor: '#d9534f' },
+            { label: 'Mar', value: parseFloat(RecMar) || 0, color: '#28a745', borderColor: '#155724' },
+            { label: 'Abr', value: parseFloat(RecAbr) || 0, color: '#ffc107', borderColor: '#856404' },
+            { label: 'Mai', value: parseFloat(RecMai) || 0, color: '#17a2b8', borderColor: '#0c5460' },
+            { label: 'Jun', value: parseFloat(RecJun) || 0, color: '#6610f2', borderColor: '#4e0754' },
+            { label: 'Jul', value: parseFloat(RecJul) || 0, color: '#dc3545', borderColor: '#721c24' },
+            { label: 'Ago', value: parseFloat(RecAgo) || 0, color: '#6f42c1', borderColor: '#4e0754' },
+            { label: 'Set', value: parseFloat(RecSet) || 0, color: '#e83e8c', borderColor: '#721c24' },
+            { label: 'Out', value: parseFloat(RecOut) || 0, color: '#e83e8c', borderColor: '#721c24' },
+            { label: 'Nov', value: parseFloat(RecNov) || 0, color: '#e83e8c', borderColor: '#721c24' },
+            { label: 'Dez', value: parseFloat(RecDez) || 0, color: '#e83e8c', borderColor: '#721c24' },
+        ];
 
-        let canvas = document.getElementById('barChart');
-        if (!canvas) {
-            console.error("Erro: Canvas 'barChart' não encontrado!");
-            return;
-        }
 
-        let ctx = canvas.getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labelsFixos,
-                datasets: [{
-                    label: 'A Receber (Por Mês de Vencimento)',
-                    data: valoresFixos,
-                    backgroundColor: coresFixas,
-                    borderColor: bordasFixas,
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { position: 'top' },
-                    tooltip: {
-                        callbacks: {
-                            label: function (tooltipItem) {
-                                return tooltipItem.label + ': ' + tooltipItem.raw;
+        function criarGrafico(idCanvas, label, dados) {
+            let canvas = document.getElementById(idCanvas);
+            if (canvas) {
+                let ctx = canvas.getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: dados.map(s => s.label),
+                        datasets: [{
+                            label: label,
+                            data: dados.map(s => s.value),
+                            backgroundColor: dados.map(s => s.color),
+                            borderColor: dados.map(s => s.borderColor),
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'top' },
+                            tooltip: {
+                                callbacks: {
+                                    label: function (tooltipItem) {
+                                        return tooltipItem.label + ': ' + tooltipItem.raw;
+                                    }
+                                }
                             }
                         }
                     }
-                }
+                });
             }
-        });
+        }
+
+        criarGrafico('barChartAbe', 'A Receber (Por Mês de Vencimento)', Receber);
+        criarGrafico('barChartRec', 'Recebidos (Por Mês de Vencimento)', Recebidos);
     };
-
-
-
 </script>
