@@ -670,62 +670,70 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     window.onload = function () {
-        let AbeJan = document.getElementById('span_vABEJAN')?.innerText.trim() || "0";
-        let AbeFev = document.getElementById('span_vABEFEV')?.innerText.trim() || "0";
-        let AbeMar = document.getElementById('span_vABEMAR')?.innerText.trim() || "0";
-        let AbeAbr = document.getElementById('span_vABEABR')?.innerText.trim() || "0";
-        let AbeMai = document.getElementById('span_vABEMAI')?.innerText.trim() || "0";
-        let AbeJun = document.getElementById('span_vABEJUN')?.innerText.trim() || "0";
-        let AbeJul = document.getElementById('span_vABEJUL')?.innerText.trim() || "0";
-        let AbeAgo = document.getElementById('span_vABEAGO')?.innerText.trim() || "0";
-        let AbeSet = document.getElementById('span_vABESET')?.innerText.trim() || "0";
-        let AbeOut = document.getElementById('span_vABEOUT')?.innerText.trim() || "0";
-        let AbeNov = document.getElementById('span_vABENOV')?.innerText.trim() || "0";
-        let AbeDez = document.getElementById('span_vABEDEZ')?.innerText.trim() || "0";
+        function getNumericValue(id) {
+            let element = document.getElementById(id);
+            if (element) {
+                let value = element.innerText.trim().replace(/\./g, '').replace(',', '.'); // Remove milhares e ajusta decimal
+                return parseFloat(value) || 0;
+            }
+            return 0;
+        }
 
-        let RecJan = document.getElementById('span_vRECJAN')?.innerText.trim() || "0";
-        let RecFev = document.getElementById('span_vRECFEV')?.innerText.trim() || "0";
-        let RecMar = document.getElementById('span_vRECMAR')?.innerText.trim() || "0";
-        let RecAbr = document.getElementById('span_vRECABR')?.innerText.trim() || "0";
-        let RecMai = document.getElementById('span_vRECMAI')?.innerText.trim() || "0";
-        let RecJun = document.getElementById('span_vRECJUN')?.innerText.trim() || "0";
-        let RecJul = document.getElementById('span_vRECJUL')?.innerText.trim() || "0";
-        let RecAgo = document.getElementById('span_vRECAGO')?.innerText.trim() || "0";
-        let RecSet = document.getElementById('span_vRECSET')?.innerText.trim() || "0";
-        let RecOut = document.getElementById('span_vRECOUT')?.innerText.trim() || "0";
-        let RecNov = document.getElementById('span_vRECNOV')?.innerText.trim() || "0";
-        let RecDez = document.getElementById('span_vRECDEZ')?.innerText.trim() || "0";
+        let AbeJan = getNumericValue('span_vABEJAN');
+        let AbeFev = getNumericValue('span_vABEFEV');
+        let AbeMar = getNumericValue('span_vABEMAR');
+        let AbeAbr = getNumericValue('span_vABEABR');
+        let AbeMai = getNumericValue('span_vABEMAI');
+        let AbeJun = getNumericValue('span_vABEJUN');
+        let AbeJul = getNumericValue('span_vABEJUL');
+        let AbeAgo = getNumericValue('span_vABEAGO');
+        let AbeSet = getNumericValue('span_vABESET');
+        let AbeOut = getNumericValue('span_vABEOUT');
+        let AbeNov = getNumericValue('span_vABENOV');
+        let AbeDez = getNumericValue('span_vABEDEZ');
+
+        let RecJan = getNumericValue('span_vRECJAN');
+        let RecFev = getNumericValue('span_vRECFEV');
+        let RecMar = getNumericValue('span_vRECMAR');
+        let RecAbr = getNumericValue('span_vRECABR');
+        let RecMai = getNumericValue('span_vRECMAI');
+        let RecJun = getNumericValue('span_vRECJUN');
+        let RecJul = getNumericValue('span_vRECJUL');
+        let RecAgo = getNumericValue('span_vRECAGO');
+        let RecSet = getNumericValue('span_vRECSET');
+        let RecOut = getNumericValue('span_vRECOUT');
+        let RecNov = getNumericValue('span_vRECNOV');
+        let RecDez = getNumericValue('span_vRECDEZ');
 
         let Receber = [
-            { label: 'Jan', value: parseFloat(AbeJan) || 0, color: '#007bff', borderColor: '#004085' },
-            { label: 'Fev', value: parseFloat(AbeFev) || 0, color: '#ff7f7f', borderColor: '#d9534f' },
-            { label: 'Mar', value: parseFloat(AbeMar) || 0, color: '#28a745', borderColor: '#155724' },
-            { label: 'Abr', value: parseFloat(AbeAbr) || 0, color: '#ffc107', borderColor: '#856404' },
-            { label: 'Mai', value: parseFloat(AbeMai) || 0, color: '#17a2b8', borderColor: '#0c5460' },
-            { label: 'Jun', value: parseFloat(AbeJun) || 0, color: '#6610f2', borderColor: '#4e0754' },
-            { label: 'Jul', value: parseFloat(AbeJul) || 0, color: '#dc3545', borderColor: '#721c24' },
-            { label: 'Ago', value: parseFloat(AbeAgo) || 0, color: '#6f42c1', borderColor: '#4e0754' },
-            { label: 'Set', value: parseFloat(AbeSet) || 0, color: '#e83e8c', borderColor: '#d6336c' },
-            { label: 'Out', value: parseFloat(AbeOut) || 0, color: '#fd7e14', borderColor: '#e86c1e' },
-            { label: 'Nov', value: parseFloat(AbeNov) || 0, color: '#f39c12', borderColor: '#e67e22' },
-            { label: 'Dez', value: parseFloat(AbeDez) || 0, color: '#16a085', borderColor: '#1abc9c' }
+            { label: 'Jan', value: AbeJan, color: '#007bff', borderColor: '#004085' },
+            { label: 'Fev', value: AbeFev, color: '#ff7f7f', borderColor: '#d9534f' },
+            { label: 'Mar', value: AbeMar, color: '#28a745', borderColor: '#155724' },
+            { label: 'Abr', value: AbeAbr, color: '#ffc107', borderColor: '#856404' },
+            { label: 'Mai', value: AbeMai, color: '#17a2b8', borderColor: '#0c5460' },
+            { label: 'Jun', value: AbeJun, color: '#6610f2', borderColor: '#4e0754' },
+            { label: 'Jul', value: AbeJul, color: '#dc3545', borderColor: '#721c24' },
+            { label: 'Ago', value: AbeAgo, color: '#6f42c1', borderColor: '#4e0754' },
+            { label: 'Set', value: AbeSet, color: '#e83e8c', borderColor: '#d6336c' },
+            { label: 'Out', value: AbeOut, color: '#fd7e14', borderColor: '#e86c1e' },
+            { label: 'Nov', value: AbeNov, color: '#f39c12', borderColor: '#e67e22' },
+            { label: 'Dez', value: AbeDez, color: '#16a085', borderColor: '#1abc9c' }
         ];
 
         let Recebidos = [
-            { label: 'Jan', value: parseFloat(RecJan) || 0, color: '#007bff', borderColor: '#004085' },
-            { label: 'Fev', value: parseFloat(RecFev) || 0, color: '#ff7f7f', borderColor: '#d9534f' },
-            { label: 'Mar', value: parseFloat(RecMar) || 0, color: '#28a745', borderColor: '#155724' },
-            { label: 'Abr', value: parseFloat(RecAbr) || 0, color: '#ffc107', borderColor: '#856404' },
-            { label: 'Mai', value: parseFloat(RecMai) || 0, color: '#17a2b8', borderColor: '#0c5460' },
-            { label: 'Jun', value: parseFloat(RecJun) || 0, color: '#6610f2', borderColor: '#4e0754' },
-            { label: 'Jul', value: parseFloat(RecJul) || 0, color: '#dc3545', borderColor: '#721c24' },
-            { label: 'Ago', value: parseFloat(RecAgo) || 0, color: '#6f42c1', borderColor: '#4e0754' },
-            { label: 'Set', value: parseFloat(RecSet) || 0, color: '#e83e8c', borderColor: '#d6336c' },
-            { label: 'Out', value: parseFloat(RecOut) || 0, color: '#fd7e14', borderColor: '#e86c1e' },
-            { label: 'Nov', value: parseFloat(RecNov) || 0, color: '#f39c12', borderColor: '#e67e22' },
-            { label: 'Dez', value: parseFloat(RecDez) || 0, color: '#16a085', borderColor: '#1abc9c' }
+            { label: 'Jan', value: RecJan, color: '#007bff', borderColor: '#004085' },
+            { label: 'Fev', value: RecFev, color: '#ff7f7f', borderColor: '#d9534f' },
+            { label: 'Mar', value: RecMar, color: '#28a745', borderColor: '#155724' },
+            { label: 'Abr', value: RecAbr, color: '#ffc107', borderColor: '#856404' },
+            { label: 'Mai', value: RecMai, color: '#17a2b8', borderColor: '#0c5460' },
+            { label: 'Jun', value: RecJun, color: '#6610f2', borderColor: '#4e0754' },
+            { label: 'Jul', value: RecJul, color: '#dc3545', borderColor: '#721c24' },
+            { label: 'Ago', value: RecAgo, color: '#6f42c1', borderColor: '#4e0754' },
+            { label: 'Set', value: RecSet, color: '#e83e8c', borderColor: '#d6336c' },
+            { label: 'Out', value: RecOut, color: '#fd7e14', borderColor: '#e86c1e' },
+            { label: 'Nov', value: RecNov, color: '#f39c12', borderColor: '#e67e22' },
+            { label: 'Dez', value: RecDez, color: '#16a085', borderColor: '#1abc9c' }
         ];
-
 
         function criarGrafico(idCanvas, label, dados) {
             let canvas = document.getElementById(idCanvas);
@@ -750,7 +758,17 @@
                             tooltip: {
                                 callbacks: {
                                     label: function (tooltipItem) {
-                                        return tooltipItem.label + ': ' + tooltipItem.raw;
+                                        return tooltipItem.label + ': ' + tooltipItem.raw.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                min: 0,
+                                ticks: {
+                                    callback: function (value) {
+                                        return value.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
                                     }
                                 }
                             }
